@@ -1,0 +1,25 @@
+{
+  "name": "ToneSpace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "howler": "^2.0.4",
+    "paper": "^0.11.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasdiquec/tonespace.git"
+  },
+  "keywords": [],
+  "author": "Tasdique Chowdhury, Omar Miah, Sammy Akharaz, Aman Sawhney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tasdiquec/tonespace/issues"
+  },
+  "homepage": "https://github.com/tasdiquec/tonespace#readme"
+}
