@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="node_modules/paper/dist/paper-full.js"></script>
 	<script type="text/javascript" src="node_modules/howler/src/howler.core.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/circles.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.13.0.js"></script>
 
 	<script type="text/paperscript" canvas="myCanvas">
@@ -218,6 +219,18 @@
 	</script>
 </head>
 <body>
+<input type="checkbox" id="slide" name="" value="" />
+<div class="container">
+	<label for="slide" class="toggle"><</label>
+	<nav class="sidebar">
+		<h1 id="logo">Tonespace</h1>
+		<p id="desc">Play music with your friends</p>
+		<ul>
+			<li class="nav-i">How To</li>
+			<li class="nav-i">About</li>
+		</ul>
+	</nav>
+</div>
 	<canvas id="myCanvas" resize></canvas>
 </body>
 </html>

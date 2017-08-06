@@ -2,9 +2,86 @@ canvas {
 	width: 100%;
 	height: 100%;
 	background: black;
-}
 
+}
 body, html {
 	height: 100%;
 	margin: 0;
+}
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Varela+Round);
+
+.toggle {
+text-decoration: none;
+font-size: 2em;
+color: #e53935;
+-webkit-transition: all 1s ease-out 0;
+-moz-transition: all 1s ease-out 0;
+transition: all 1s ease-out 0;
+position: fixed;
+top: 20px;
+left: 20px;
+z-index: 1;
+cursor: pointer;
+}
+
+.sidebar {
+position: fixed;
+top: 0px;
+bottom: 0px;
+left: -20rem;
+-webkit-transition: all 1s ease-out 0;
+-moz-transition: all 1s ease-out 0;
+transition: all 1s ease-out 0;
+width: 20rem;
+padding: 1.5em;
+background: #212121; 
+}
+
+.sidebar ul {
+list-style: none;
+margin: 0;
+padding: 0; 
+}
+
+.sidebar li a {
+color: #fff;
+font-family: 'Poiret One', cursive;
+font-size: 1.2em;
+margin: 0;
+margin-bottom: 16px;
+cursor: pointer;
+text-decoration: none;
+line-height: 200%;
+}
+
+.sidebar a:hover {
+  color: rgba(0, 0, 0, 0.61); 
+}
+
+#slide:checked + .container .sidebar {
+left: 0px;
+ }
+
+#slide:checked + .container .toggle {
+left: 325px;
+ }
+
+
+#slide {
+display: none; 
+}
+
+#logo{
+font: 35px Lato,arial;
+color: #e0e0e0;
+letter-spacing: 10px;
+}
+#desc{
+font: 18px Lato,arial;
+color: #e0e0e0;
+}
+.nav-i{
+font: 16px Lato,arial;
+color: #e0e0e0;
+padding-top: 25px;
 }
