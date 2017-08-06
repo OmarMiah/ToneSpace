@@ -6,11 +6,6 @@
 	<script type="text/javascript" src="node_modules/howler/src/howler.core.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/circles.css">
 	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.13.0.js"></script>
-	<script type="text/javascript">
-
-
-
-	</script>
 
 	<script type="text/paperscript" canvas="myCanvas">
         var channel = 'my-draw-demo';
@@ -181,43 +176,17 @@
 	}
 
 	var circles = [];
-	function onKeyDown(event) {
-		if(keyData[event.key]){
-			var maxPoint = new Point(view.size.width, view.size.height);
-			var randomPoint = Point.random();
-			var point = maxPoint * randomPoint;
-			var newCircle = new Path.Circle(point, 500);
-			newCircle.fillColor = keyData[event.key].color;
-			keyData[event.key].sound.play();
-            circles.push(newCircle);
-            console.log(circles);
-            console.log(event);
-			pubnub.publish({
-                channel: ['my_channel'],
-                message: event
-
-            });
-
-
-		}
+	function onKeyDown(key) {
+		var maxPoint = new Point(view.size.width, view.size.height);
+		var randomPoint = Point.random();
+		var point = maxPoint * randomPoint;
+		var newCircle = new Path.Circle(point, 500);
+		newCircle.fillColor = keyData[key].color;
+		keyData[key].sound.play();
+        circles.push(newCircle);
+        console.log(circles);
+        console.log(event);
 	}
-
-	function stream(key) {
-	var maxPoint = new Point(view.size.width, view.size.height);
-			var randomPoint = Point.random();
-			var point = maxPoint * randomPoint;
-			var newCircle = new Path.Circle(point, 500);
-			newCircle.fillColor = keyData[key].color;
-			keyData[key].sound.play();
-            circles.push(newCircle);
-            console.log(circles);
-            console.log(event);
-	}
-
-
-
-
-
 
 	function onFrame(event) {
 
@@ -231,19 +200,16 @@
 			}
 		}
 	}
-	function me() {
-		console.log('hi');
-	}
+
 	pubnub.addListener({
-    message: function(message){
-    stream(message.message.key);
-    }
+		message: function(message){
+			onKeyDown(message.message.key);
+    	}
+	})
 
-})
-
-pubnub.subscribe({
-    channels: ['my_channel']
-});
+	pubnub.subscribe({
+	    channels: ['my_channel']
+	});
 
 
 </script>
